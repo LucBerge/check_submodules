@@ -19,6 +19,8 @@ jobs:
     steps:        
       - name: Check if submodules are up-to-date
         uses: LucBerge/check_submodules@latest
+        with:
+          token: ${{ secrets.PAT }}  # Optional: Provide a GitHub token if needed for private submodules
 ```
 
 ## How It Works
