@@ -14,23 +14,12 @@ on:
 
 jobs:
   check-submodules:
-    runs-on: [orchestrator-runner]
+    runs-on: ubuntu-latest
 
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-        
+    steps:        
       - name: Check if submodules are up-to-date
-        uses: LucBerge/check_submodules@master
+        uses: LucBerge/check_submodules@latest
 ```
-
-## Create your workflow from template
-
-1. On the Github interface, go to the repository where you want to add this action
-2. Click on the "Actions" tab
-3. Click on "New workflow"
-4. Select the "Check Submodules" template from the list
-5. Click on "Start commit" to create the workflow file in your repository
 
 ## How It Works
 
