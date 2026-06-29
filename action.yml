@@ -1,0 +1,23 @@
+name: Check Submodules
+description: "Checks if all git submodules are up-to-date with their remote default branches"
+author: 'LucBerge'
+
+inputs:
+  token:
+    description: 'GitHub token with access to submodule repositories'
+    required: false
+    default: ${{ github.token }}
+
+runs:
+  using: "composite"
+  steps:
+  - uses: actions/checkout@v4
+    with:
+      submodules: true
+      token: ${{ inputs.token }}
+
+  - name: Check if submodules are up-to-date
+    shell: bash
+    run: |
+      chmod +x ${{ github.action_path }}/script.sh
+      ${{ github.action_path }}/script.sh
