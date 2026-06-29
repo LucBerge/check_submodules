@@ -1,6 +1,9 @@
 name: Check Submodules
 description: "Checks if all git submodules are up-to-date with their remote default branches"
 author: 'LucBerge'
+branding:
+  icon: check
+  color: green
 
 inputs:
   token:
